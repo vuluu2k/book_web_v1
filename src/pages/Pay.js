@@ -168,8 +168,8 @@ function Pay(props) {
                 icon={
                   <div
                     className="d-flex align-items-center justify-content-center"
-                    style={{ ...styleIconStep, borderColor: (stateStep >= 0 && '#d70018') || color_disable }}>
-                    <ShoppingCartOutlined style={{ color: (stateStep >= 0 && '#d70018') || color_disable, fontSize: 16 }} />
+                    style={{ ...styleIconStep, borderColor: (stateStep >= 0 && '#f8bc5a') || color_disable }}>
+                    <ShoppingCartOutlined style={{ color: (stateStep >= 0 && '#f8bc5a') || color_disable, fontSize: 16 }} />
                   </div>
                 }
               />
@@ -178,8 +178,8 @@ function Pay(props) {
                 icon={
                   <div
                     className="d-flex align-items-center justify-content-center"
-                    style={{ ...styleIconStep, borderColor: (stateStep >= 1 && '#d70018') || color_disable }}>
-                    <IdcardOutlined style={{ color: (stateStep >= 1 && '#d70018') || color_disable, fontSize: 16 }} />
+                    style={{ ...styleIconStep, borderColor: (stateStep >= 1 && '#f8bc5a') || color_disable }}>
+                    <IdcardOutlined style={{ color: (stateStep >= 1 && '#f8bc5a') || color_disable, fontSize: 16 }} />
                   </div>
                 }
               />
@@ -188,8 +188,8 @@ function Pay(props) {
                 icon={
                   <div
                     className="d-flex align-items-center justify-content-center"
-                    style={{ ...styleIconStep, borderColor: (stateStep >= 2 && '#d70018') || color_disable }}>
-                    <PercentageOutlined style={{ color: (stateStep >= 2 && '#d70018') || color_disable, fontSize: 16 }} />
+                    style={{ ...styleIconStep, borderColor: (stateStep >= 2 && '#f8bc5a') || color_disable }}>
+                    <PercentageOutlined style={{ color: (stateStep >= 2 && '#f8bc5a') || color_disable, fontSize: 16 }} />
                   </div>
                 }
               />
@@ -198,8 +198,8 @@ function Pay(props) {
                 icon={
                   <div
                     className="d-flex align-items-center justify-content-center"
-                    style={{ ...styleIconStep, borderColor: (stateStep >= 3 && '#d70018') || color_disable }}>
-                    <CreditCardOutlined style={{ color: (stateStep >= 3 && '#d70018') || color_disable, fontSize: 16 }} />
+                    style={{ ...styleIconStep, borderColor: (stateStep >= 3 && '#f8bc5a') || color_disable }}>
+                    <CreditCardOutlined style={{ color: (stateStep >= 3 && '#f8bc5a') || color_disable, fontSize: 16 }} />
                   </div>
                 }
               />
@@ -208,8 +208,8 @@ function Pay(props) {
                 icon={
                   <div
                     className="d-flex align-items-center justify-content-center"
-                    style={{ ...styleIconStep, borderColor: (stateStep >= 4 && '#d70018') || color_disable }}>
-                    <FiPackage style={{ color: (stateStep >= 4 && '#d70018') || color_disable, fontSize: 16 }} />
+                    style={{ ...styleIconStep, borderColor: (stateStep >= 4 && '#f8bc5a') || color_disable }}>
+                    <FiPackage style={{ color: (stateStep >= 4 && '#f8bc5a') || color_disable, fontSize: 16 }} />
                   </div>
                 }
               />

@@ -4,30 +4,31 @@
   .ant-layout-header {
     padding: 0 200px;
     line-height: 20px;
-    background: #d70018;
+    background: white;
+    color:#000 !important;
 
     &.header {
       position: fixed;
       z-index: 1;
       width: 100%;
       a {
-        color: #fff !important;
+        color: #000 !important;
       }
     }
 
     .icon-header {
       font-size: 22px;
-      color: white;
+      color: #000;
     }
   }
 
   .ant-layout-footer {
-    background: #d70018;
-    color: white;
+    background: white;
+    color: #000 !important;
   }
 
   .layout-carousel {
-    box-shadow: rgb(60 64 67 / 0.1) 0px 1px 2px 0px, rgb(60 64 67 / 0.15) 0px 2px 6px 2px;
+    // box-shadow: rgb(60 64 67 / 0.1) 0px 1px 2px 0px, rgb(60 64 67 / 0.15) 0px 2px 6px 2px;
     border: 1px solid #f0f0f0;
     margin-top: 16px;
     padding: 8px;

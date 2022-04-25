@@ -51,35 +51,27 @@ function Client({ children, ...props }) {
         <Header className="header">
           <div className="d-flex align-items-center justify-content-between" style={{ height: 64 }}>
             <Link onClick={() => loadListProduct({ search: true })} to="/home">
-              <img src="https://res.cloudinary.com/vuluu/image/upload/v1648835124/PhoneTop/Logo/logo_white_yhtbc6.png" height={64} alt="logo" />
+              <img src="https://bookbuy.vn/Images/frontend/base/logo-new.png"  height={32} alt="logo" />
             </Link>
             <Input
-              placeholder="Bạn muốn tìm kiếm sản phẩm nào?"
+              placeholder="Nhập tên sách bạn đang cần tìm..."
               value={keySearch}
               allowClear
               onChange={e => {
                 setKeySearch(e.target.value);
                 loadListProduct({ name: e.target.value });
               }}
-              style={{ width: 200, marginLeft: 16 }}
+              style={{ width: 400, marginLeft: 16 }}
             />
 
-            <div className="d-flex align-items-center" style={{ marginLeft: 16, textAlign: 'center' }}>
+            <div className="d-flex align-items-center" style={{ marginLeft: 16, }}>
               <PhoneOutlined className="icon-header" style={{ marginRight: 8 }} />
               <a href="tel:0898709170">
-                <div className="fw-500">Gọi mua hàng</div>
-                <div className="fw-700">0898709170</div>
+                <div className="d-flex flex-column">
+                  <div className="fw-500">Hotline</div>
+                  <div className="fw-700">0898709170</div>
+                </div>
               </a>
-            </div>
-            <Link to="/check_package" style={{ marginRight: 8 }}>
-              <div className="text-center">
-                <ImTruck className="icon-header" />
-                <div className="fw-500">Tra Cứu đơn hàng</div>
-              </div>
-            </Link>
-            <div className="text-center cursor-pointer" onClick={() => showCart()}>
-              <ShoppingCartOutlined className="icon-header" />
-              <div className="fw-500 text-white">Giỏ hàng</div>
             </div>
             {(selectAuthStatus?.user?.name && (
               <Dropdown
@@ -95,17 +87,21 @@ function Client({ children, ...props }) {
                 }>
                 <div className="text-center" style={{ backgroundColor: 'rgba(255,255,255,0.2)', padding: 8, borderRadius: 16 }}>
                   <UserOutlined className="icon-header" />
-                  <div className="fw-500 text-white">{selectAuthStatus?.user?.name || 'Tài khoản'}</div>
+                  <div className="fw-500 ">{selectAuthStatus?.user?.name || 'Tài khoản'}</div>
                 </div>
               </Dropdown>
             )) || (
               <Link to="/login">
-                <div className="text-center" style={{ backgroundColor: 'rgba(255,255,255,0.2)', padding: 8, borderRadius: 16 }}>
+                <div className="text-center d-flex" style={{ backgroundColor: 'rgba(255,255,255,0.2)', padding: 8, borderRadius: 16 }}>
                   <UserOutlined className="icon-header" />
-                  <div className="fw-500 text-white">{selectAuthStatus?.user?.name || 'Tài khoản'}</div>
+                  <div className="fw-500 ml-4">{selectAuthStatus?.user?.name || 'Tài khoản'}</div>
                 </div>
               </Link>
             )}
+            <div className="text-center cursor-pointer d-flex" onClick={() => showCart()}>
+              <ShoppingCartOutlined className="icon-header" />
+              <div className="fw-500 ml-4">Giỏ hàng</div>
+            </div>
           </div>
         </Header>
         <Content style={{ padding: '0 200px', marginTop: 64, backgroundColor: '#fff' }}>
@@ -132,6 +128,7 @@ function Client({ children, ...props }) {
             <Footer style={{ color: 'white', padding: '16px 200px' }}>
               <Row>
                 <Col span={6}>
+                  <h4>HỖ TRỢ KHÁCH HÀNG</h4>
                   <div>Tìm cửa hàng</div>
                   <div>Tìm cửa hàng gần nhất</div>
                   <div>Mua hàng từ xa</div>
@@ -160,6 +157,7 @@ function Client({ children, ...props }) {
                   </div>
                 </Col>
                 <Col span={6}>
+                    
                   <div>Mua hàng và thanh toán Online</div>
                   <div>Mua hàng trả góp Online</div>
                   <div>Tra thông tin đơn hàng</div>
@@ -179,8 +177,8 @@ function Client({ children, ...props }) {
             </Footer>{' '}
             <div
               className="w-100 d-flex justify-content-center "
-              style={{ backgroundColor: 'rgba(255, 0, 0,0.8)', color: 'white', padding: '8px 0', fontWeight: 500 }}>
-              ©Copyright Created by Lưu Công Quang Vũ
+              style={{ backgroundColor: '#f8bc5a', color: 'white', padding: '8px 0', fontWeight: 500 }}>
+              ©Copyright Created by student from imformation technology 2 of HaUi
             </div>
           </>
         )}

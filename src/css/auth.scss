@@ -1,8 +1,7 @@
 .auth {
   &.container {
     position: relative;
-    background: url('https://www.duchuymobile.com/images/companies/1/1-tin-moi/2020/thang-2/5-2/thiet-ke-camera-iphone-13-pro-max.jpg?1625733668717')
-      no-repeat center center/cover;
+    background-image: linear-gradient(to bottom right, blue, yellow);
     height: 100vh;
 
     .dark-overlay {
@@ -33,7 +32,7 @@
 
       &.on {
         color: #fff;
-        background-image: linear-gradient(to right, #ff2653, #ff881b);
+        background: blue;
       }
     }
   }

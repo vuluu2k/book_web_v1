@@ -110,63 +110,21 @@ function ProductDetail(props) {
             </div>
           )}
 
-          <div className="w-100" style={{ border: '1px solid #D1D5DB', borderRadius: 10, marginTop: 16 }}>
-            <div className="w-100 fw-500" style={{ padding: 8 }}>
-              THÔNG TIN SẢN PHẨM
-            </div>
-            <div className="p-8">
-              <div>
-                <MobileOutlined style={{ marginRight: 8 }} />
-                Nguyên hộp, đầy đủ phụ kiện từ nhà sản xuất
-              </div>
-              <div>
-                <FileProtectOutlined style={{ marginRight: 8 }} />
-                Bảo hành 24 tháng tại trung tâm bảo hành Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi phần cứng từ nhà sản xuất.
-              </div>
-              <div>
-                <AccountBookOutlined style={{ marginRight: 8 }} />
-                Số lượng còn trong kho: <span className="text-red">{quantity}</span>
-              </div>
-            </div>
-          </div>
-
           <Button className="btn-buy" style={{ marginTop: 16 }} onClick={() => handleAddCart()} block>
-            <div className="fw-500">MUA NGAY</div>
-            <div>(Giao tận nơi hoặc lấy tại cửa hàng)</div>
+            <div className="fw-500">THÊM VÀO GIỎ HÀNG</div>
           </Button>
-          <div className="w-100" style={{ border: '1px solid #D1D5DB', borderRadius: 10, marginTop: 16 }}>
-            <div className="w-100 fw-500" style={{ backgroundColor: '#D1D5DB', padding: 8, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}>
-              ƯU ĐÃI THÊM
-            </div>
-            <div className="p-8">
-              <div>
-                <CheckCircleOutlined style={{ color: 'green', marginRight: 8 }} />
-                Giảm thêm tới 1% cho thành viên Smember (áp dụng tùy sản phẩm)
-              </div>
-              <div>
-                <CheckCircleOutlined style={{ color: 'green', marginRight: 8 }} />
-                Giảm thêm 500.000đ khi thanh toán qua ví thẻ tín dụng VP Bank cho đơn hàng từ 10 triệu
-              </div>
-              <div>
-                <CheckCircleOutlined style={{ color: 'green', marginRight: 8 }} />
-                Thu cũ đổi mới: Giá thu cao - Thủ tục nhanh chóng - Trợ giá tốt nhất
-              </div>
-            </div>
-          </div>
         </Col>
       </Row>
       <Divider />
-      <Row gutter={30} style={{ paddingBottom: 16 }}>
-        <Col span={16}>
+      <div className="w-100 mb-16">
           <div
             className="description"
             style={{
-              boxShadow: 'rgb(60 64 67 / 0.1) 0px 1px 2px 0px, rgb(60 64 67 / 0.15) 0px 2px 6px 2px',
               borderRadius: 16,
               padding: 8,
               backgroundColor: 'white',
             }}>
-            <div className="text-center text-red fw-700 fz-16">ĐẶC ĐIỂM NỔI BẬT</div>
+            <div className="text-center text-upper fw-700 fz-16">Một số thông tin về sách</div>
             {(description && (
               <>
                 <div
@@ -188,32 +146,7 @@ function ProductDetail(props) {
               </>
             )) || <div>Sản phẩm chưa được shop nhập mô tả</div>}
           </div>
-        </Col>
-        <Col span={8}>
-          <div
-            style={{
-              boxShadow: 'rgb(60 64 67 / 0.1) 0px 1px 2px 0px, rgb(60 64 67 / 0.15) 0px 2px 6px 2px',
-              borderRadius: 16,
-              backgroundColor: 'rgba(255, 255, 255)',
-            }}>
-            <div className="fw-700 p-8">THÔNG SỐ KĨ THUẬT</div>
-            {renderItemProfile('Kích thước màn hình', (profile?.screen_size && `${profile.screen_size} inches`) || text_empty, '#F2F2F2')}
-            {renderItemProfile('Công nghệ màn hình', (profile?.screen_technology && `${profile.screen_technology} inches`) || text_empty)}
-            {renderItemProfile('Camera sau', (profile?.camera_font && `${profile.camera_font} inches`) || text_empty, '#F2F2F2')}
-            {renderItemProfile('Camera trước', (profile?.camera_back && `${profile.camera_back} inches`) || text_empty)}
-            {renderItemProfile('Chipset', (profile?.chipset && `${profile.chipset} inches`) || text_empty, '#F2F2F2')}
-            {renderItemProfile('Dung lượng RAM', (profile?.ram_capacity && `${profile.ram_capacity} inches`) || text_empty)}
-            {renderItemProfile('Bộ nhớ trong', (profile?.rom_capacity && `${profile.rom_capacity} inches`) || text_empty, '#F2F2F2')}
-            {renderItemProfile('Pin', (profile?.baterry && `${profile.baterry} inches`) || text_empty)}
-            {renderItemProfile('Thẻ SIM', (profile?.sim_card && `${profile.sim_card} inches`) || text_empty, '#F2F2F2')}
-            {renderItemProfile('Hệ điều hành', (profile?.os && `${profile.os} inches`) || text_empty)}
-            {renderItemProfile('Độ phân giải màn hình', (profile?.screen_pixel && `${profile.screen_pixel} inches`) || text_empty, '#F2F2F2')}
-            {renderItemProfile('Tần số quét', (profile?.scan_frequency && `${profile.scan_frequency} inches`) || text_empty)}
-            {renderItemProfile('Trọng lượng', (profile?.weight && `${profile.weight} inches`) || text_empty, '#F2F2F2')}
-            {renderItemProfile('Bluetooth', (profile?.bluetooth && `${profile.bluetooth} inches`) || text_empty, 'white', '16px')}
-          </div>
-        </Col>
-      </Row>
+      </div>
     </Client>
   );
 }

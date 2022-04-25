@@ -39,11 +39,11 @@ const initialState = {
     success: false,
     message: '',
     hot: [],
-    mobile: [],
-    laptop: [],
-    watch: [],
-    tablet: [],
-    accessory: [],
+    sp1: [],
+    sp2: [],
+    sp3: [],
+    sp4: [],
+    sp5: [],
   },
 
   productStatusDel: {

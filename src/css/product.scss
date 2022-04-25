@@ -1,7 +1,6 @@
 body {
   .product-item {
     background-color: rgb(255, 255, 255);
-    border-radius: 12px;
     padding: 16px;
     margin-bottom: 15px;
     box-shadow: rgb(60 64 67 / 0.1) 0px 1px 2px 0px, rgb(60 64 67 / 0.15) 0px 2px 6px 2px;
@@ -22,10 +21,9 @@ body {
   }
 
   .product-item-detail {
-    background: linear-gradient(to right, #dd5e89, #f7bb97);
+    background: linear-gradient(to right, #f8bc5a, #f7bb97);
     padding: 16px;
     border-radius: 8px;
-    min-height: 400px;
   }
 
   .product-item-money {
@@ -33,7 +31,7 @@ body {
     margin-bottom: 10px !important;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #d70018;
+    color: #f8bc5a;
   }
 
   .option-item {
@@ -45,7 +43,7 @@ body {
   }
 
   .option-item-activated {
-    border: 1px solid #d70018;
+    border: 1px solid #f8bc5a;
     min-width: 120px;
     padding: 8px 20px;
     border-radius: 8px;

@@ -224,7 +224,7 @@ function ProductAddModal(props) {
   }
 
   const onSubmitCreate = () => {
-    if(validate()){
+    if(!validate()){
       createProduct({
         name,
         value,
@@ -347,7 +347,7 @@ function ProductAddModal(props) {
         }>
         <div>
           <Row gutter={8} style={{ overflow: 'auto scroll', maxHeight: 'calc(100vh - 200px)' }}>
-            <Col span={12}>
+            <Col span={24}>
               <div style={{ marginBottom: 16 }}>
                 <TableCustom title="Thông tin cơ bản sản phẩm" style={styleTable}>
                   <div className="text" style={{ marginTop: 0 }}>
@@ -367,11 +367,8 @@ function ProductAddModal(props) {
                     <Option value="Mới" name="status">
                       Mới
                     </Option>
-                    <Option value="Like New" name="status">
-                      Like New
-                    </Option>
-                    <Option value="OTA" name="status">
-                      OTA
+                    <Option value="Cũ" name="status">
+                      Cũ
                     </Option>
                   </Select>
                 </TableCustom>
@@ -397,76 +394,6 @@ function ProductAddModal(props) {
                       </Option>
                     ))}
                   </Select>
-                </TableCustom>
-              </div>
-              <div>
-                <TableCustom title="Các cấu hình khác" style={styleTable}>
-                  <div className="text" style={{ marginTop: 0 }}>
-                    Tên cấu hình
-                  </div>
-                  <Input placeholder="Nhập tên cấu hình" name="name_option" value={name_option} onChange={onChange} />
-                  <div>Giá trị</div>
-                  <Input placeholder="Nhập giá trị" name="value_option" value={value_option} onChange={onChange} style={{ marginBottom: 8 }} />
-                  <Button onClick={onAddOption} type="primary" block>
-                    Thêm
-                  </Button>
-
-                  <Row gutter={15} style={{ marginBottom: 16, marginTop: 8 }}>
-                    {options.map((item, idx) => (
-                      <Col key={idx} span={8} style={{ marginBottom: 4 }}>
-                        <div
-                          className="d-flex align-items-center justify-content-between"
-                          style={{ backgroundColor: '#ff2653', color: '#fff', padding: '4px 16px', borderRadius: 8 }}>
-                          <div className="d-flex align-items-center justify-content-center flex-column">
-                            <div className="fw-500">{item.name_option}</div>
-                            <div>{moneyMask(item.value_option || 0)}</div>
-                          </div>
-                          <CloseCircleOutlined onClick={() => closeAddOption(item)} />
-                        </div>
-                      </Col>
-                    ))}
-                  </Row>
-                </TableCustom>
-              </div>
-            </Col>
-            <Col span={12}>
-              <div>
-                <TableCustom title="Thông số sản phẩm" style={styleTable}>
-                  <div className="text" style={{ marginTop: 0 }}>
-                    Kích thước màn hình
-                  </div>
-                  <Input placeholder="Nhập kích thước màn hình" name="screen_size" value={screen_size} onChange={onChangeObj} />
-                  <div className="text">Công nghệ màn hình</div>
-                  <Input placeholder="Nhập công nghệ màn hình" name="screen_technology" value={screen_technology} onChange={onChangeObj} />
-                  <div className="text">Camera</div>
-                  <Input placeholder="Camera trước" name="camera_font" value={camera_font} onChange={onChangeObj} style={{ marginBottom: 4 }} />
-                  <Input placeholder="Camera sau" name="camera_back" value={camera_back} onChange={onChangeObj} />
-                  <div className="text">Chipset</div>
-                  <Input placeholder="Chipset" name="chipset" value={chipset} onChange={onChangeObj} />
-                  <div className="text">Ram</div>
-                  <Input placeholder="Dung lượng ram" name="ram_capacity" value={ram_capacity} onChange={onChangeObj} />
-                  <div className="text">Rom</div>
-                  <Input placeholder="Dung lượng bộ nhớ trong" name="rom_capacity" value={rom_capacity} onChange={onChangeObj} />
-                  <div className="text">Dung lượng pin</div>
-                  <Input placeholder="Dung lượng pin" name="baterry" value={baterry} onChange={onChangeObj} />
-                  <div className="text">Thẻ sim</div>
-                  <Input placeholder="Thông tin thẻ sim" name="sim_card" value={sim_card} onChange={onChangeObj} />
-                  <div className="text">Hệ điều hành</div>
-                  <Input placeholder="Nhập hệ điều hành" name="os" value={os} onChange={onChangeObj} />
-                  <div className="text">Độ phân giải màn hình</div>
-                  <Input placeholder="Nhập độ phân giải màn hình" name="screen_pixel" value={screen_pixel} onChange={onChangeObj} />
-                  <div className="text">Cân nặng</div>
-                  <Input placeholder="Nhập cân nặng" name="weight" value={weight} onChange={onChangeObj} />
-                  <div className="text">Bluetooth</div>
-                  <Input placeholder="Nhập thông tin bluetooth" name="bluetooth" value={bluetooth} onChange={onChangeObj} />
-                  <div className="text">Tần số quét</div>
-                  <Input
-                    placeholder="Nhập tần số quét"
-                    name="scan_frequency"
-                    value={scan_frequency}
-                    onChange={onChangeObj}
-                    style={{ marginBottom: 16 }}
-                  />
                 </TableCustom>
               </div>
             </Col>

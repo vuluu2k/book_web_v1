@@ -40,11 +40,12 @@ function Home(props) {
     },
     selectProductInformation: { products, dataSearch },
     actions: { loadListProductHome, loadListProduct },
-    selectProductInformationHome: { hot, mobile, laptop, watch, tablet, accessory },
+    selectProductInformationHome: { hot,sp1,sp2,sp3,sp4,sp5},
   } = props;
 
   useEffect(() => {
-    loadListProductHome();
+    loadListProduct({});
+    loadListProductHome({});
   }, []);
 
   const loadListProductWithCategory = key => {
@@ -66,56 +67,47 @@ function Home(props) {
         </div>
       )) || (
         <>
-          <Layout className="layout-carousel site-layout-background" style={{ marginBottom: 16 }}>
+          <Layout className=" site-layout-background" style={{ marginBottom: 16 }}>
             <Sider className="site-layout-background">
               <Menu mode="vertical">
                 {categorys?.map(category => {
-                  const icon =
-                    (category.name_vi === 'Điện thoại' && MobileOutlined) ||
-                    (category.name_vi === 'Laptop, PC, Màn hình' && LaptopOutlined) ||
-                    (category.name_vi === 'Máy tỉnh bảng' && TabletOutlined) ||
-                    (category.name_vi === 'Âm thanh' && FaHeadphonesAlt) ||
-                    (category.name_vi === 'Nhà thông minh' && HomeOutlined) ||
-                    (category.name_vi === 'Đồng hồ' && IoWatchOutline) ||
-                    (category.name_vi === 'Phụ kiện' && CgUsb);
                   return (
-                    <SubMenu key={category._id} icon={<Icon component={icon} />} title={category.name_vi}>
+                    <SubMenu key={category._id}title={category.name_vi}>
                       {category.sub_name.map((item, idx) => (
                         <SubMenu key={category._id + '/' + item} title={item} onTitleClick={e => loadListProductWithCategory(e.key)}></SubMenu>
                       ))}
                     </SubMenu>
                   );
                 })}
-                <Menu.Item key="/blog" icon={<FaRegNewspaper />}>
-                  <Link to="/blog">Tin công nghệ</Link>
-                </Menu.Item>
               </Menu>
             </Sider>
             <Content>
               <Carousel autoplay>
                 <div>
-                  <Image src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/S22_1.png" width={'100%'} />
+                  <Image src="https://bookbuy.vn/Res/Images/Album/dbeee104-d003-4439-b710-f1b4d28922b8.jpg?w=880&scale=both&h=320&mode=crop" width={'100%'} />
                 </div>
                 <div>
-                  <Image src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/S22_1.png" width={'100%'} />
+                  <Image src="https://bookbuy.vn/Res/Images/Album/ead14324-98df-42d0-9589-345fa575fb25.jpg?w=880&scale=both&h=320&mode=crop" width={'100%'} />
                 </div>
                 <div>
-                  <Image src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/S22_1.png" width={'100%'} />
+                  <Image src="https://bookbuy.vn/Res/Images/Album/1517cd9d-ca75-4674-a2a9-3ffc1d509a91.jpg?w=880&scale=both&h=320&mode=crop" width={'100%'} />
                 </div>
                 <div>
-                  <Image src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/S22_1.png" width={'100%'} />
+                  <Image src="https://bookbuy.vn/Res/Images/Album/50b028b4-c03e-4fac-8307-52e4e2bff0a2.jpg?w=880&scale=both&h=320&mode=crop" width={'100%'} />
                 </div>
               </Carousel>
             </Content>
           </Layout>
           <Layout>
-            <SilderCustom item={hot} title="Sản phẩm bán chạy nhất" />
+            <SilderCustom item={hot} title="Sách bán chạy nhất gần đây >>>" />
 
-            {mobile.length > 0 && renderProductArray(mobile, 'Điện thoại')}
-            {laptop.length > 0 && renderProductArray(laptop, 'Laptop, PC, Màn hình')}
-            {watch.length > 0 && renderProductArray(watch, 'Đồng hồ')}
-            {tablet.length > 0 && renderProductArray(tablet, 'Máy tính bảng')}
-            {accessory.length > 0 && renderProductArray(accessory, 'Phụ kiện')}
+            {products.length > 0 && renderProductArray(products, 'Chào bạn đến thế giới sách ')}
+
+            {sp1.length > 0 && renderProductArray(sp1, 'Sách-Truyện Tranh')}
+            {sp2.length > 0 && renderProductArray(sp2, 'Sách-Truyện Tranh')}
+            {sp3.length > 0 && renderProductArray(sp3, 'Sách-Truyện Tranh')}
+            {sp4.length > 0 && renderProductArray(sp4, 'Sách-Truyện Tranh')}
+            {sp5.length > 0 && renderProductArray(sp5, 'Sách-Truyện Tranh')}
           </Layout>
         </>
       )}

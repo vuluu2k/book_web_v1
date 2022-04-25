@@ -73,7 +73,7 @@ function CartDetail(props) {
                   </div>
                 </div>
                 <div>{item.name_option}</div>
-                <div className="fw-500" style={{ color: '#D70018 ' }}>
+                <div className="fw-500" style={{ color: '#f8bc5a ' }}>
                   {moneyMask(item.value_option)}
                 </div>
               </div>

@@ -61,9 +61,9 @@ function Admin({ children, ...props }) {
           )}
         </div>
         <Menu theme="light" mode="inline" selectedKeys={[keyMenu]} onClick={e => handleChangeMenu(e.key)}>
-          <Menu.Item key="/dashboard" icon={<VideoCameraOutlined />}>
-            <Link to="/dashboard">Báo cáo - live</Link>
-          </Menu.Item>
+          {/* <Menu.Item key="/dashboard" icon={<VideoCameraOutlined />}>
+            <Link to="/dashboard">Thông kê</Link>
+          </Menu.Item> */}
           <Menu.Item key="/product-manager" icon={<MobileOutlined />}>
             <Link to="/product-manager">Sản phẩm</Link>
           </Menu.Item>
@@ -72,9 +72,6 @@ function Admin({ children, ...props }) {
           </Menu.Item>
           <Menu.Item key="/category-manager" icon={<BiCategory />}>
             <Link to="/category-manager">Danh mục</Link>
-          </Menu.Item>
-          <Menu.Item key="/blog-manager" icon={<GrBlog />}>
-            <Link to="/blog-manager">Tin tức</Link>
           </Menu.Item>
           <Menu.Item key="/account-manager" icon={<MdSupervisorAccount />}>
             <Link to="/account-manager">Tài khoản</Link>
