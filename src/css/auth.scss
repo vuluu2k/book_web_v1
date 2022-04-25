@@ -1,0 +1,40 @@
+.auth {
+  &.container {
+    position: relative;
+    background: url('https://www.duchuymobile.com/images/companies/1/1-tin-moi/2020/thang-2/5-2/thiet-ke-camera-iphone-13-pro-max.jpg?1625733668717')
+      no-repeat center center/cover;
+    height: 100vh;
+
+    .dark-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
+    }
+
+    .auth-inner {
+      height: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .text {
+      color: #fff;
+    }
+
+    .btn-switch {
+      font-weight: 500;
+      padding: 4px;
+      border-radius: 14px;
+      min-width: 150px;
+      cursor: pointer;
+
+      &.on {
+        color: #fff;
+        background-image: linear-gradient(to right, #ff2653, #ff881b);
+      }
+    }
+  }
+}
