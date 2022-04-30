@@ -44,6 +44,11 @@ const initialState = {
     sp3: [],
     sp4: [],
     sp5: [],
+    name1:'',
+    name2:'',
+    name3:'',
+    name4:'',
+    name5:'',
   },
 
   productStatusDel: {

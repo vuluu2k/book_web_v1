@@ -40,7 +40,7 @@ function Home(props) {
     },
     selectProductInformation: { products, dataSearch },
     actions: { loadListProductHome, loadListProduct },
-    selectProductInformationHome: { hot,sp1,sp2,sp3,sp4,sp5},
+    selectProductInformationHome: { hot,sp1,sp2,sp3,sp4,sp5,name1,name2,name3,name4,name5},
   } = props;
 
   useEffect(() => {
@@ -103,11 +103,11 @@ function Home(props) {
 
             {products.length > 0 && renderProductArray(products, 'Chào bạn đến thế giới sách ')}
 
-            {sp1.length > 0 && renderProductArray(sp1, 'Sách-Truyện Tranh')}
-            {sp2.length > 0 && renderProductArray(sp2, 'Sách-Truyện Tranh')}
-            {sp3.length > 0 && renderProductArray(sp3, 'Sách-Truyện Tranh')}
-            {sp4.length > 0 && renderProductArray(sp4, 'Sách-Truyện Tranh')}
-            {sp5.length > 0 && renderProductArray(sp5, 'Sách-Truyện Tranh')}
+            {sp1.length > 0 && renderProductArray(sp1, name1)}
+            {sp2.length > 0 && renderProductArray(sp2, name2)}
+            {sp3.length > 0 && renderProductArray(sp3, name3)}
+            {sp4.length > 0 && renderProductArray(sp4, name4)}
+            {sp5.length > 0 && renderProductArray(sp5, name5)}
           </Layout>
         </>
       )}

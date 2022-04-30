@@ -20,7 +20,7 @@ const endDate = dayjs().startOf().format(dateFormat);
 function Dashboard(props) {
   const {
     actions: { getTurnover },
-    selectListTurnover: { packages, productCount, productCountOld, packageAcceptCount, packageNotAcceptCount, userCount },
+    selectListTurnover: { packages, productCount, productCountOld, userCount },
   } = props;
 
   useEffect(() => {
@@ -44,9 +44,8 @@ function Dashboard(props) {
   const valueArray = keyArray.map(key => sumMoneyNumber(turnoverArray[key].map(item => item.value)));
 
   return (
-    <Admin title="Báo cáo - live">
+    <Admin title="Thống kê tiệm sách của bạn">
       <RangePicker
-        showTime={{ format: 'HH:mm' }}
         onChange={onChange}
         defaultValue={[moment(startDate, dateFormat), moment(endDate, dateFormat)]}
         placeholder={['Ngày bắt đầu', 'Ngày kết thúc']}
@@ -55,7 +54,6 @@ function Dashboard(props) {
       <Charts
         series={[
           { name: 'Doanh thu', data: valueArray.reverse() },
-          { name: 'Tiền COD', data: [] },
         ]}
         categoriesX={keyArray.reverse()}
       />
@@ -63,6 +61,7 @@ function Dashboard(props) {
         series={[
           {
             innerSize: '50%',
+            colorByPoint: true,
             data: [
               {
                 name: 'Sản phẩm',
@@ -71,14 +70,6 @@ function Dashboard(props) {
               {
                 name: 'Sản phẩm tồn kho',
                 y: productCountOld,
-              },
-              {
-                name: 'Đơn hàng xác thực thanh toán',
-                y: packageAcceptCount,
-              },
-              {
-                name: 'Đơn hàng chưa xác thực thanh toán',
-                y: packageNotAcceptCount,
               },
               {
                 name: 'Khách hàng',

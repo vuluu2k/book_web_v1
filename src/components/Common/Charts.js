@@ -5,9 +5,10 @@ import Highcharts from 'highcharts';
 function Charts(props) {
   const config = {
     chart: {
-      type: 'areaspline',
+      type: 'line',
     },
     title: {
+      align: 'left',
       text: 'Thông kê kết quả doanh thu & phí vận chuyển',
     },
     legend: {
