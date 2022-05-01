@@ -14,7 +14,7 @@ export default function Login(props) {
   useEffect(() => {
     notification();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [message]);
 
   const onChange = e => {
     setState({ ...state, [e.target.name]: e.target.value });

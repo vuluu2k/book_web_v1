@@ -1,6 +1,11 @@
 @import '~antd/dist/antd.css';
 
 .layout {
+
+  .ant-layout{
+    background:#fff
+  }
+
   .ant-layout-header {
     padding: 0 200px;
     line-height: 20px;

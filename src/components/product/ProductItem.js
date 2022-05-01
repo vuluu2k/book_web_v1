@@ -7,7 +7,7 @@ import { moneyMask } from 'utils/number';
 export default function ProductItem({ id, name, value, imageLink }) {
   return (
     <Link to={`/product-detail/${id}`}>
-      <div className="product-item" style={{ minHeight: 320 }}>
+      <div className="product-item" style={{ minHeight: 400 }}>
         <div className="text-center">
           <Image src={imageLink} width={'100%'} />
         </div>

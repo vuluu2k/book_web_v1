@@ -26,7 +26,7 @@ function CartDetail(props) {
           </div>
           <div className="ml-8 w-100">
             <div className="d-flex justify-content-between w-100 fw-700 fz-16">
-              {item.name} ({item.name_option})
+              {/* {item.name} ({item.name_option}) */}
               <div>
                 <CloseCircleOutlined
                   className="cursor-pointer"
@@ -72,7 +72,7 @@ function CartDetail(props) {
                     />
                   </div>
                 </div>
-                <div>{item.name_option}</div>
+                {/* <div>{item.name_option}</div> */}
                 <div className="fw-500" style={{ color: '#f8bc5a ' }}>
                   {moneyMask(item.value_option)}
                 </div>
