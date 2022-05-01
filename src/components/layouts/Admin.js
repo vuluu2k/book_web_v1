@@ -6,7 +6,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
   LogoutOutlined,
-  OrderedListOutlined,
+  BookOutlined,
   MobileOutlined,
 } from '@ant-design/icons';
 import { FiPackage } from 'react-icons/fi';
@@ -64,7 +64,7 @@ function Admin({ children, ...props }) {
           <Menu.Item key="/dashboard" icon={<VideoCameraOutlined />}>
             <Link to="/dashboard">Thông kê tiệm sách</Link>
           </Menu.Item>
-          <Menu.Item key="/product-manager" icon={<MobileOutlined />}>
+          <Menu.Item key="/product-manager" icon={<BookOutlined />}>
             <Link to="/product-manager">Quản lý sách</Link>
           </Menu.Item>
           <Menu.Item key="/package-manager" icon={<FiPackage />}>

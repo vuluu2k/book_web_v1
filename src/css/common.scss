@@ -214,7 +214,7 @@ body {
 
   .box-shadow {
     // box-shadow: rgb(60 64 67 / 0.1) 0px 1px 2px 0px, rgb(60 64 67 / 0.15) 0px 2px 6px 2px;
-    border: 1px solid #f8bc5a;
+    border: 1px solid #f8bc5a;  
   }
 
   // btn
@@ -270,11 +270,11 @@ body {
     background: #ffffff;
 
     .data-table-title {
-      background-color: $geek-blue-1;
+      background-color: #ff7923;
       padding: 8px 16px;
 
       .title {
-        color: $daybreak-blue-9;
+        color: #652f0d;
         text-transform: uppercase;
         font-weight: 500;
       }
