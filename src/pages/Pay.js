@@ -340,8 +340,7 @@ function Pay(props) {
                   {stateStep === 4 && (
                     <>
                       <div className="mb-8">
-                        Cảm ơn Quý khách hàng đã chọn mua hàng tại PhoneTop. Trong 15 phút, PhoneTop sẽ SMS hoặc gọi để xác nhận đơn hàng. * Các đơn hàng
-                        từ 21h30 tối tới 8h sáng hôm sau. PhoneTop sẽ liên hệ với Quý khách trước 10h trưa cùng ngày
+                        Cảm ơn Quý khách hàng. Trong 15 phút, SMS hoặc gọi để xác nhận đơn hàng.
                       </div>
                       <div className="box-shadow p-16 border-radius-16" style={{ backgroundColor: '#d4edda', color: '#155724' }}>
                         <div className="fz-16 fw-700 text-upper text-center mb-b ">ĐẶT HÀNG THÀNH CÔNG</div>
