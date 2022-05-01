@@ -51,7 +51,7 @@ function Client({ children, ...props }) {
         <Header className="header">
           <div className="d-flex align-items-center justify-content-between" style={{ height: 64 }}>
             <Link onClick={() => loadListProduct({ search: true })} to="/home">
-              <img src="https://bookbuy.vn/Images/frontend/base/logo-new.png"  height={32} alt="logo" />
+              <img src="https://bookbuy.vn/Images/frontend/base/logo-new.png" height={32} alt="logo" />
             </Link>
             <Input
               placeholder="Nhập tên sách bạn đang cần tìm..."
@@ -91,13 +91,13 @@ function Client({ children, ...props }) {
                 </div>
               </Dropdown>
             )) || (
-              <Link to="/login">
-                <div className="text-center d-flex" style={{ backgroundColor: 'rgba(255,255,255,0.2)', padding: 8, borderRadius: 16 }}>
-                  <UserOutlined className="icon-header" />
-                  <div className="fw-500 ml-4">{selectAuthStatus?.user?.name || 'Tài khoản'}</div>
-                </div>
-              </Link>
-            )}
+                <Link to="/login">
+                  <div className="text-center d-flex" style={{ backgroundColor: 'rgba(255,255,255,0.2)', padding: 8, borderRadius: 16 }}>
+                    <UserOutlined className="icon-header" />
+                    <div className="fw-500 ml-4">{selectAuthStatus?.user?.name || 'Tài khoản'}</div>
+                  </div>
+                </Link>
+              )}
             <div className="text-center cursor-pointer d-flex" onClick={() => showCart()}>
               <ShoppingCartOutlined className="icon-header" />
               <div className="fw-500 ml-4">Giỏ hàng</div>
@@ -129,50 +129,87 @@ function Client({ children, ...props }) {
               <Row>
                 <Col span={6}>
                   <h4>HỖ TRỢ KHÁCH HÀNG</h4>
-                  <div>Tìm cửa hàng</div>
-                  <div>Tìm cửa hàng gần nhất</div>
-                  <div>Mua hàng từ xa</div>
-                </Col>
-                <Col span={6}>
                   <div>
-                    Gọi mua hàng:
-                    <strong>
-                      <a href="tel:18002097">1800.2097</a>
-                    </strong>
-                    (8h00 - 22h00)
+
+                    Sản phẩm & Đơn hàng: 0933 109 009
                   </div>
                   <div>
-                    Gọi khiếu nại:
-                    <strong>
-                      <a href="tel:18002063">1800.2063</a>
-                    </strong>
-                    (8h00 - 22h00)
+
+                    Kỹ thuật & Bảo hành: 0989 439 986
                   </div>
                   <div>
-                    Gọi bảo hành
-                    <strong>
-                      <a href="tel:18002064">1800.2064</a>
-                    </strong>
-                    (8h00 - 22h00)
+
+                    Điện thoại: (028) 3820 7153 (giờ hành chính)
+                  </div>
+                  <div>
+
+                    Email: info@bookbuy.vn
+                  </div>
+                  <div>
+
+                    Địa chỉ: 9 Lý Văn Phức, Tân Định, Q1, TP.HCM
                   </div>
                 </Col>
                 <Col span={6}>
-                    
-                  <div>Mua hàng và thanh toán Online</div>
-                  <div>Mua hàng trả góp Online</div>
-                  <div>Tra thông tin đơn hàng</div>
-                  <div>Trung tâm bảo hành chính hãng</div>
-                  <div>Quy định về việc sao lưu dữ liệu</div>
-                  <div>Dịch vụ bảo hành điện thoại</div>
+                  <h4>TRỢ GIÚP</h4>
+                  <div>Đăng ký nhận bản tin</div>
+                  <div>Hướng dẫn mua hàng</div>
+                  <div>Phương thức thanh toán</div>
+                  <div>Phương thức vận chuyển</div>
+                  <div>Chính sách đổi - trả</div>
+                  <div>Chính sách bồi hoàn</div>
+                  <div> Câu hỏi thường gặp (FAQs)</div>
+
                 </Col>
                 <Col span={6}>
-                  <div>Quy chế hoạt động</div>
-                  <div>Chính sách Bảo hành</div>
-                  <div>Liên hệ hợp tác kinh doanh</div>
-                  <div>Đơn Doanh nghiệp</div>
-                  <div>Ưu đãi từ đối tác</div>
-                  <div>Tuyển dụng</div>
+                  <h4>TÀI KHOẢN CỦA BẠN</h4>
+                  <div>
+                    Cập nhật tài khoản
+                  </div>
+                  <div>
+
+                    Giỏ hàng
+                  </div>
+                  <div>
+
+                    Lịch sử giao dịch
+                  </div>
+                  <div>
+
+                    Sản phẩm yêu thích
+                  </div>
+                  <div>
+
+                    Kiểm tra đơn hàng
+                  </div>
                 </Col>
+                <Col span={6}>
+                  <h4>BOOKBUY</h4>
+                  <div>
+                    Giới thiệu bookbuy.vn
+                  </div>
+                  <div>
+                    BookBuy trên Facebook
+                  </div>
+                  <div>
+                    Liên hệ BookBuy
+                  </div>
+                  <div>
+                    Đặt hàng theo yêu cầu
+                  </div>
+                  <div>
+                    Tích lũy BBxu
+                  </div>
+                  <div>
+
+                    Proguide.vn - Kaspersky
+                  </div>
+                  <div>
+
+                    iBookStop.vn
+                  </div>
+                </Col>
+
               </Row>
             </Footer>{' '}
             <div
