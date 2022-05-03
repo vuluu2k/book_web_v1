@@ -50,6 +50,12 @@ function AccountManager(props) {
       dataIndex: 'email',
     },
     {
+      title: 'Quyền tài khoản',
+      key: 'role',
+      dataIndex: 'role',
+      render: (role, item) => <div>{(role === 0 && 'Khách hàng') || 'Quản lí'}</div>,
+    },
+    {
       title: 'Thao tác',
       key: 'actions',
       align: 'center',
