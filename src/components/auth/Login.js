@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Input, Checkbox, Form, message as messageAntd } from 'antd';
+import { Input, Checkbox, Form, message as messageAntd, Spin } from 'antd';
 import { Navigate } from 'react-router-dom';
 
 export default function Login(props) {
@@ -12,20 +12,12 @@ export default function Login(props) {
   } = props;
 
   useEffect(() => {
-    notification();
+    if (success && !requesting) onClear();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onChange = e => {
     setState({ ...state, [e.target.name]: e.target.value });
-  };
-
-  const notification = () => {
-    if (success && !requesting) {
-      onClear();
-      return messageAntd.success(message || 'Đăng ký thành công');
-    } else if (!success && !requesting && message !== '') return messageAntd.error(message || 'Đăng ký thất bại');
-    return;
   };
 
   const onClear = () => setState({ username: '', password: '' });
@@ -40,7 +32,7 @@ export default function Login(props) {
   if (isAuthenticated) return <Navigate to="/product-manager" />;
 
   return (
-    <div>
+    <Spin spinning={requesting}>
       <Form name="basic" initialValues={{ remember: false }} autoComplete="off">
         <Form.Item name="username" rules={[{ required: true, message: 'Vui lòng nhập tên tài khoản!' }]}>
           <Input placeholder="Tài khoản" name="username" value={username} onChange={onChange} />
@@ -58,6 +50,6 @@ export default function Login(props) {
           Đăng nhập
         </div>
       </Form>
-    </div>
+    </Spin>
   );
 }

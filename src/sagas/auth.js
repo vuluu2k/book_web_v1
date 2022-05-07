@@ -25,6 +25,7 @@ import {
 import { setToken } from 'utils/token';
 import { LOCAL_STORAGE_TOKEN_NAME, USER, LOCAL_CART } from 'constants';
 import { API_URL } from 'env_config';
+import { notification } from 'antd';
 
 export default [authSagas];
 
@@ -91,6 +92,10 @@ function* login({ payload }) {
   const body = { name: username, password: password };
   try {
     const response = yield call(axios.post, url, body);
+    notification.open({
+      title: 'Thông báo',
+      message: response.data.message,
+    });
     if (!response.data.success) {
       yield put({ type: LOGIN_ERROR, ...response.data });
     } else {
