@@ -187,44 +187,20 @@ function ProductAddModal(props) {
     imgWindow.document.write(image.outerHTML);
   };
 
-  const validate = () =>{
-    if (validator.isEmpty(String(name))||
-        validator.isEmpty(String(category))||
-        validator.isEmpty(String(sub_categorys))||
-        validator.equals(String(value),'0')||
-        validator.equals(String(quantity),'0')||
-        validator.isEmpty(String(profile.screen_pixel))||
-        validator.isEmpty(String(profile.screen_technology))||
-        validator.isEmpty(String(profile.screen_size))||
-        validator.isEmpty(String(profile.camera_font))||
-        validator.isEmpty(String(profile.camera_back))||
-        validator.isEmpty(String(profile.chipset))||
-        validator.isEmpty(String(profile.sim_card))||
-        validator.isEmpty(String(profile.os))||
-        validator.isEmpty(String(profile.bluetooth))||
-        validator.equals(String(profile.ram_capacity),'0')||
-        validator.equals(String(profile.rom_capacity,'0'))||
-        validator.equals(String(profile.baterry,'0'))||
-        validator.equals(String(profile.weight,'0'))||
-        validator.isEmpty(String(profile.frequency))
-    ){
-      messageAntd.error('Bạn chưa nhập đủ trường dữ liệu')
-      return false;
-    }
+  const validate = () => {
     if (!validator.isNumeric(value)) {
-       messageAntd.error('Nhập lại giá trị sản phẩm(kiểu số)')
+      messageAntd.error('Nhập lại giá trị sản phẩm(kiểu số)');
       return false;
     }
     if (!validator.isNumeric(quantity)) {
-       messageAntd.error('Nhập lại số lượng sản phẩm(kiểu số)')
+      messageAntd.error('Nhập lại số lượng sản phẩm(kiểu số)');
       return false;
-       
     }
     return true;
-  }
+  };
 
   const onSubmitCreate = () => {
-    if(!validate()){
+    if (!validate()) {
       createProduct({
         name,
         value,
@@ -243,7 +219,7 @@ function ProductAddModal(props) {
   };
 
   const onSubmitEdit = () => {
-    if (validate()){
+    if (validate()) {
       editProduct({
         id: productItem?._id,
         name,

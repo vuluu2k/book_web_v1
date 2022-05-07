@@ -118,9 +118,7 @@ function Pay(props) {
             <img src={item.image_link} alt={item.name} width={160} height={160} />
           </div>
           <div className="ml-8 w-100">
-            <div className="d-flex justify-content-between w-100 fw-700 fz-16">
-              {/* {item.name} ({item.name_option}) */}
-            </div>
+            <div className="d-flex justify-content-between w-100 fw-700 fz-16">{/* {item.name} ({item.name_option}) */}</div>
             <div className="text-red fw-700 fz-16">{moneyMask(item.value_option)}</div>
             <div className="d-flex align-items-center">
               <div className="fw-500">Số lượng: {item.quantity}</div>
@@ -151,10 +149,10 @@ function Pay(props) {
                 {stateStep === 1
                   ? 'Thông tin đặt hàng'
                   : stateStep === 2
-                    ? 'Phiếu giảm giá'
-                    : stateStep === 3
-                      ? 'Chọn phương thức thanh toán'
-                      : 'Hoàn tất'}
+                  ? 'Phiếu giảm giá'
+                  : stateStep === 3
+                  ? 'Chọn phương thức thanh toán'
+                  : 'Hoàn tất'}
               </div>
             </div>
           </div>
@@ -162,7 +160,12 @@ function Pay(props) {
           <div style={{ backgroundColor: '#fef2f260', borderRadius: 16 }}>
             <Row>
               <Col span={8}>
-                <Steps current={stateStep} className="step-custom p-16" direction="vertical" labelPlacement="vertical" onChange={e => setStateStep(e)}>
+                <Steps
+                  current={stateStep}
+                  className="step-custom p-16"
+                  direction="vertical"
+                  labelPlacement="vertical"
+                  onChange={e => setStateStep(e)}>
                   <Step
                     disabled
                     title="Chọn sách"
@@ -269,14 +272,14 @@ function Pay(props) {
                               </Col>
                             </>
                           )) || (
-                              <Select defaultValue="" className="w-100" value={stateStore} onChange={e => setStateStore(e)}>
-                                <Option value="">Chọn cơ sơ muốn nhận máy</Option>
-                                <Option value="Nhà sách BookBuy,Phố Nhổn-Nam Từ Liêm Hà Nội">Nhà sách BookBuy,Phố Nhổn-Nam Từ Liêm, Hà Nội</Option>
-                                <Option value="Nhà sách BookBuy,Quận Hai Bà Trưng Hà Nội">Nhà sách BookBuy,Quận Hai Bà Trưng Hà Nội</Option>
-                                <Option value="Nhà sách BookBuy,Quận Thanh Xuân, Hà Nội">Nhà sách BookBuy,Quận Thanh Xuân, Hà Nội</Option>
-                                <Option value="Nhà sách BookBuy,Quận Hà Đông, Hà Nội">Nhà sách BookBuy,Quận Hà Đông, Hà Nội</Option>
-                              </Select>
-                            )}
+                            <Select defaultValue="" className="w-100" value={stateStore} onChange={e => setStateStore(e)}>
+                              <Option value="">Chọn cơ sơ bán sách</Option>
+                              <Option value="Nhà sách BookBuy,Phố Nhổn-Nam Từ Liêm Hà Nội">Nhà sách BookBuy,Phố Nhổn-Nam Từ Liêm, Hà Nội</Option>
+                              <Option value="Nhà sách BookBuy,Quận Hai Bà Trưng Hà Nội">Nhà sách BookBuy,Quận Hai Bà Trưng Hà Nội</Option>
+                              <Option value="Nhà sách BookBuy,Quận Thanh Xuân, Hà Nội">Nhà sách BookBuy,Quận Thanh Xuân, Hà Nội</Option>
+                              <Option value="Nhà sách BookBuy,Quận Hà Đông, Hà Nội">Nhà sách BookBuy,Quận Hà Đông, Hà Nội</Option>
+                            </Select>
+                          )}
                         </Row>
                       </div>
                       <div className="mt-8">
@@ -288,7 +291,7 @@ function Pay(props) {
                   {stateStep === 2 && (
                     <>
                       <div className="box-shadow p-16 border-radius-16">
-                        <div className="fz-16 fw-500 text-upper text-center ">THÔNG TIN ĐẶT HÀNG</div>
+                        <div className="fz-16 fw-500 text-upper text-center ">THÔNG TIN MUA SÁCH</div>
                         <div>
                           Người nhận: <strong>{full_name}</strong>
                         </div>
@@ -311,7 +314,7 @@ function Pay(props) {
                   {stateStep === 3 && (
                     <>
                       <div className="box-shadow p-16 border-radius-16">
-                        <div className="fz-16 fw-500 text-upper text-center ">THÔNG TIN ĐẶT HÀNG</div>
+                        <div className="fz-16 fw-500 text-upper text-center ">THÔNG TIN MUA SÁCH</div>
                         <div>
                           Người nhận: <strong>{full_name}</strong>
                         </div>
@@ -329,19 +332,17 @@ function Pay(props) {
                         </div>
                       </div>
                       <div className="p-16">
-                        <div className="mt-8 mb-8 fz-16 fw-500">Chọn hình thức thanh toán</div>
-                        <Row gutter={4}>
-                          <Col span={12}>{renderItemPay('Thanh toán tại cửa hàng', <SiHomeassistantcommunitystore />)}</Col>
-                          <Col span={12}>{renderItemPay('Thanh toán chuyển khoản', <MdPayment />)}</Col>
+                        <div className="mt-8 mb-8 fz-16 fw-500">Thanh toán theo phương thức</div>
+                        <Row>
+                          <Col span={24}>{renderItemPay('Thanh toán tại cửa hàng', <SiHomeassistantcommunitystore />)}</Col>
+                          <Col span={24}>{renderItemPay('Thanh toán chuyển khoản', <MdPayment />)}</Col>
                         </Row>
                       </div>
                     </>
                   )}
                   {stateStep === 4 && (
                     <>
-                      <div className="mb-8">
-                        Cảm ơn Quý khách hàng. Trong 15 phút, SMS hoặc gọi để xác nhận đơn hàng.
-                      </div>
+                      <div className="mb-8">Cảm ơn Quý khách hàng. Trong 15 phút, SMS hoặc gọi để xác nhận đơn hàng.</div>
                       <div className="box-shadow p-16 border-radius-16" style={{ backgroundColor: '#d4edda', color: '#155724' }}>
                         <div className="fz-16 fw-700 text-upper text-center mb-b ">ĐẶT HÀNG THÀNH CÔNG</div>
                         <div>
@@ -404,7 +405,6 @@ function Pay(props) {
                 </div>
               </Col>
             </Row>
-
           </div>
           {stateStep !== 4 && (
             <div className="mt-8">
