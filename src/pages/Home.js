@@ -40,7 +40,7 @@ function Home(props) {
     },
     selectProductInformation: { products, dataSearch },
     actions: { loadListProductHome, loadListProduct },
-    selectProductInformationHome: { hot,sp1,sp2,sp3,sp4,sp5,name1,name2,name3,name4,name5},
+    selectProductInformationHome: { hot, sp1, sp2, sp3, sp4, sp5, name1, name2, name3, name4, name5 },
   } = props;
 
   useEffect(() => {
@@ -72,7 +72,7 @@ function Home(props) {
               <Menu mode="vertical">
                 {categorys?.map(category => {
                   return (
-                    <SubMenu key={category._id}title={category.name_vi}>
+                    <SubMenu key={category._id} title={category.name_vi}>
                       {category.sub_name.map((item, idx) => (
                         <SubMenu key={category._id + '/' + item} title={item} onTitleClick={e => loadListProductWithCategory(e.key)}></SubMenu>
                       ))}
@@ -84,16 +84,28 @@ function Home(props) {
             <Content>
               <Carousel autoplay>
                 <div>
-                  <Image src="https://bookbuy.vn/Res/Images/Album/dbeee104-d003-4439-b710-f1b4d28922b8.jpg?w=880&scale=both&h=320&mode=crop" width={'100%'} />
+                  <Image
+                    src="https://bookbuy.vn/Res/Images/Album/dbeee104-d003-4439-b710-f1b4d28922b8.jpg?w=880&scale=both&h=320&mode=crop"
+                    width={'100%'}
+                  />
                 </div>
                 <div>
-                  <Image src="https://bookbuy.vn/Res/Images/Album/ead14324-98df-42d0-9589-345fa575fb25.jpg?w=880&scale=both&h=320&mode=crop" width={'100%'} />
+                  <Image
+                    src="https://bookbuy.vn/Res/Images/Album/ead14324-98df-42d0-9589-345fa575fb25.jpg?w=880&scale=both&h=320&mode=crop"
+                    width={'100%'}
+                  />
                 </div>
                 <div>
-                  <Image src="https://bookbuy.vn/Res/Images/Album/1517cd9d-ca75-4674-a2a9-3ffc1d509a91.jpg?w=880&scale=both&h=320&mode=crop" width={'100%'} />
+                  <Image
+                    src="https://bookbuy.vn/Res/Images/Album/1517cd9d-ca75-4674-a2a9-3ffc1d509a91.jpg?w=880&scale=both&h=320&mode=crop"
+                    width={'100%'}
+                  />
                 </div>
                 <div>
-                  <Image src="https://bookbuy.vn/Res/Images/Album/50b028b4-c03e-4fac-8307-52e4e2bff0a2.jpg?w=880&scale=both&h=320&mode=crop" width={'100%'} />
+                  <Image
+                    src="https://bookbuy.vn/Res/Images/Album/50b028b4-c03e-4fac-8307-52e4e2bff0a2.jpg?w=880&scale=both&h=320&mode=crop"
+                    width={'100%'}
+                  />
                 </div>
               </Carousel>
             </Content>

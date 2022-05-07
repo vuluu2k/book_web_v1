@@ -274,10 +274,12 @@ function Pay(props) {
                           )) || (
                             <Select defaultValue="" className="w-100" value={stateStore} onChange={e => setStateStore(e)}>
                               <Option value="">Chọn cơ sơ bán sách</Option>
-                              <Option value="Nhà sách BookBuy,Phố Nhổn-Nam Từ Liêm Hà Nội">Nhà sách BookBuy,Phố Nhổn-Nam Từ Liêm, Hà Nội</Option>
-                              <Option value="Nhà sách BookBuy,Quận Hai Bà Trưng Hà Nội">Nhà sách BookBuy,Quận Hai Bà Trưng Hà Nội</Option>
-                              <Option value="Nhà sách BookBuy,Quận Thanh Xuân, Hà Nội">Nhà sách BookBuy,Quận Thanh Xuân, Hà Nội</Option>
-                              <Option value="Nhà sách BookBuy,Quận Hà Đông, Hà Nội">Nhà sách BookBuy,Quận Hà Đông, Hà Nội</Option>
+                              <Option value="Nhà sách Thiên Minh,Phố Nhổn-Nam Từ Liêm Hà Nội">
+                                Nhà sách Thiên Minh,Phố Nhổn-Nam Từ Liêm, Hà Nội
+                              </Option>
+                              <Option value="Nhà sách Thiên Minh,Quận Hai Bà Trưng Hà Nội">Nhà sách Thiên Minh,Quận Hai Bà Trưng Hà Nội</Option>
+                              <Option value="Nhà sách Thiên Minh,Quận Thanh Xuân, Hà Nội">Nhà sách Thiên Minh,Quận Thanh Xuân, Hà Nội</Option>
+                              <Option value="Nhà sách Thiên Minh,Quận Hà Đông, Hà Nội">Nhà sách Thiên Minh,Quận Hà Đông, Hà Nội</Option>
                             </Select>
                           )}
                         </Row>

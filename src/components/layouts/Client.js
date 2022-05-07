@@ -51,7 +51,7 @@ function Client({ children, ...props }) {
         <Header className="header">
           <div className="d-flex align-items-center justify-content-between" style={{ height: 64 }}>
             <Link onClick={() => loadListProduct({ search: true })} to="/home">
-              <img src="https://bookbuy.vn/Images/frontend/base/logo-new.png" height={32} alt="logo" />
+              <img src="https://Thiên Minh.vn/Images/frontend/base/logo-new.png" height={32} alt="logo" />
             </Link>
             <Input
               placeholder="Nhập tên sách bạn đang cần tìm..."
@@ -64,7 +64,7 @@ function Client({ children, ...props }) {
               style={{ width: 400, marginLeft: 16 }}
             />
 
-            <div className="d-flex align-items-center" style={{ marginLeft: 16, }}>
+            <div className="d-flex align-items-center" style={{ marginLeft: 16 }}>
               <PhoneOutlined className="icon-header" style={{ marginRight: 8 }} />
               <a href="tel:0898709170">
                 <div className="d-flex flex-column">
@@ -91,13 +91,13 @@ function Client({ children, ...props }) {
                 </div>
               </Dropdown>
             )) || (
-                <Link to="/login">
-                  <div className="text-center d-flex" style={{ backgroundColor: 'rgba(255,255,255,0.2)', padding: 8, borderRadius: 16 }}>
-                    <UserOutlined className="icon-header" />
-                    <div className="fw-500 ml-4">{selectAuthStatus?.user?.name || 'Tài khoản'}</div>
-                  </div>
-                </Link>
-              )}
+              <Link to="/login">
+                <div className="text-center d-flex" style={{ backgroundColor: 'rgba(255,255,255,0.2)', padding: 8, borderRadius: 16 }}>
+                  <UserOutlined className="icon-header" />
+                  <div className="fw-500 ml-4">{selectAuthStatus?.user?.name || 'Tài khoản'}</div>
+                </div>
+              </Link>
+            )}
             <div className="text-center cursor-pointer d-flex" onClick={() => showCart()}>
               <ShoppingCartOutlined className="icon-header" />
               <div className="fw-500 ml-4">Giỏ hàng</div>
@@ -129,26 +129,11 @@ function Client({ children, ...props }) {
               <Row>
                 <Col span={6}>
                   <h4>HỖ TRỢ KHÁCH HÀNG</h4>
-                  <div>
-
-                    Sản phẩm & Đơn hàng: 0933 109 009
-                  </div>
-                  <div>
-
-                    Kỹ thuật & Bảo hành: 0989 439 986
-                  </div>
-                  <div>
-
-                    Điện thoại: (028) 3820 7153 (giờ hành chính)
-                  </div>
-                  <div>
-
-                    Email: info@bookbuy.vn
-                  </div>
-                  <div>
-
-                    Địa chỉ: 9 Lý Văn Phức, Tân Định, Q1, TP.HCM
-                  </div>
+                  <div>Sản phẩm & Đơn hàng: 0933 109 009</div>
+                  <div>Kỹ thuật & Bảo hành: 0989 439 986</div>
+                  <div>Điện thoại: (028) 3820 7153 (giờ hành chính)</div>
+                  <div>Email: info@Thiên Minh.vn</div>
+                  <div>Địa chỉ: 9 Lý Văn Phức, Tân Định, Q1, TP.HCM</div>
                 </Col>
                 <Col span={6}>
                   <h4>TRỢ GIÚP</h4>
@@ -159,57 +144,25 @@ function Client({ children, ...props }) {
                   <div>Chính sách đổi - trả</div>
                   <div>Chính sách bồi hoàn</div>
                   <div> Câu hỏi thường gặp (FAQs)</div>
-
                 </Col>
                 <Col span={6}>
                   <h4>TÀI KHOẢN CỦA BẠN</h4>
-                  <div>
-                    Cập nhật tài khoản
-                  </div>
-                  <div>
-
-                    Giỏ hàng
-                  </div>
-                  <div>
-
-                    Lịch sử giao dịch
-                  </div>
-                  <div>
-
-                    Sản phẩm yêu thích
-                  </div>
-                  <div>
-
-                    Kiểm tra đơn hàng
-                  </div>
+                  <div>Cập nhật tài khoản</div>
+                  <div>Giỏ hàng</div>
+                  <div>Lịch sử giao dịch</div>
+                  <div>Sản phẩm yêu thích</div>
+                  <div>Kiểm tra đơn hàng</div>
                 </Col>
                 <Col span={6}>
-                  <h4>BOOKBUY</h4>
-                  <div>
-                    Giới thiệu bookbuy.vn
-                  </div>
-                  <div>
-                    BookBuy trên Facebook
-                  </div>
-                  <div>
-                    Liên hệ BookBuy
-                  </div>
-                  <div>
-                    Đặt hàng theo yêu cầu
-                  </div>
-                  <div>
-                    Tích lũy BBxu
-                  </div>
-                  <div>
-
-                    Proguide.vn - Kaspersky
-                  </div>
-                  <div>
-
-                    iBookStop.vn
-                  </div>
+                  <h4>Thiên Minh</h4>
+                  <div>Giới thiệu Thiên Minh.vn</div>
+                  <div>Thiên Minh trên Facebook</div>
+                  <div>Liên hệ Thiên Minh</div>
+                  <div>Đặt hàng theo yêu cầu</div>
+                  <div>Tích lũy BBxu</div>
+                  <div>Proguide.vn - Kaspersky</div>
+                  <div>iBookStop.vn</div>
                 </Col>
-
               </Row>
             </Footer>{' '}
             <div
