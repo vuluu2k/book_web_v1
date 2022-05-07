@@ -51,7 +51,7 @@ function Client({ children, ...props }) {
         <Header className="header">
           <div className="d-flex align-items-center justify-content-between" style={{ height: 64 }}>
             <Link onClick={() => loadListProduct({ search: true })} to="/home">
-              <img src="https://Thiên Minh.vn/Images/frontend/base/logo-new.png" height={32} alt="logo" />
+              <img src="https://thienminhbook.com/wp-content/uploads/2022/02/TMBLogoHeader.png" height={32} alt="logo" />
             </Link>
             <Input
               placeholder="Nhập tên sách bạn đang cần tìm..."
