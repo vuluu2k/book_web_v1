@@ -48,7 +48,7 @@ function Admin({ children, ...props }) {
         style={{ position: 'fixed', filter: 'drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.15))', zIndex: 2 }}
         width={200}>
         <div className="d-flex justify-content-center align-items-center p-8">
-          <div style={{ fontSize: 18, fontWeight: 'bold', padding: '3px 0' }}>{collapsed ? 'BB' : 'Thiên Minh'}</div>
+          <div style={{ fontSize: 18, fontWeight: 'bold', padding: '3px 0' }}>{collapsed ? 'TM' : 'Thiên Minh'}</div>
         </div>
         <div className="logo" />
         <Divider style={{ backgroundColor: '#f0f0f0', height: 1, margin: 0 }} />
@@ -62,7 +62,7 @@ function Admin({ children, ...props }) {
         </div>
         <Menu theme="light" mode="inline" selectedKeys={[keyMenu]} onClick={e => handleChangeMenu(e.key)}>
           <Menu.Item key="/dashboard" icon={<VideoCameraOutlined />}>
-            <Link to="/dashboard">Thông kê tiệm sách</Link>
+            <Link to="/dashboard">Thống kê tiệm sách</Link>
           </Menu.Item>
           <Menu.Item key="/product-manager" icon={<BookOutlined />}>
             <Link to="/product-manager">Quản lý sách</Link>
