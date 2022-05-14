@@ -1,11 +1,14 @@
 .auth {
   &.container {
     position: relative;
-    background-image: linear-gradient(to bottom right, blue, yellow);
+    background-image: url('https://media.istockphoto.com/vectors/library-book-vector-id1151849228?b=1&k=20&m=1151849228&s=612x612&w=0&h=hO1LSWA30kqtDU_V6DmXicpXy70-i4oNa_bWs5SmW1I=') ;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:top;
     height: 100vh;
 
     .dark-overlay {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.7);
       height: 100%;
     }
 
@@ -32,7 +35,7 @@
 
       &.on {
         color: #fff;
-        background: blue;
+        background: #c46c49;
       }
     }
   }
