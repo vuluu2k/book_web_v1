@@ -5,13 +5,14 @@ import { bindActionCreators } from 'redux';
 import { SaveOutlined } from '@ant-design/icons';
 
 import { Client } from 'components/layouts';
-import { selectAuth } from 'selectors';
-import { authActions } from 'actions';
+import { selectAuth, selectPackage } from 'selectors';
+import { authActions, packageActions } from 'actions';
 
 function Account(props) {
   const {
-    actions: { editUser },
+    actions: { editUser, loadListPackage },
     selectAuthStatus: { user, requesting, success, message },
+    selectListPackage: { viewPackage },
   } = props;
 
   const [state, setState] = useState({
@@ -24,9 +25,12 @@ function Account(props) {
     newPasswordRepeat: '',
   });
   const { statusChange, fullName, Email, phoneNumber, password, newPassword, newPasswordRepeat } = state;
+
   const onChange = e => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
+
+  useEffect(() => loadListPackage({ userId: user?._id }), []);
 
   useEffect(() => {
     setState({
@@ -39,6 +43,8 @@ function Account(props) {
       newPasswordRepeat: '',
     });
   }, [user]);
+
+  console.log(props);
 
   useEffect(() => {
     notification();
@@ -64,12 +70,11 @@ function Account(props) {
       <Row style={{ margin: '16px 0' }}>
         <Col span={6} style={{ padding: 16 }}>
           <div className="d-flex align-items-center justify-content-center">
-            <Avatar size={60} />
-            <div className="ml-8 fw-500">{user?.name}</div>
+            <h1 className=" fw-500">{user?.name}</h1>
           </div>
           <div className="mt-16">
             <Button type="text" block onClick={() => setState({ ...state, statusChange: 'information' })}>
-              Thông tin tài khoản
+              Thông tin cá nhân
             </Button>
           </div>
           <div>
@@ -106,6 +111,27 @@ function Account(props) {
                   Lưu
                 </Button>
               </Row>
+              {viewPackage?.length > 0 && (
+                <>
+                  <h2 className="mt-16 text-center">Danh sách đơn hàng</h2>
+                  <div>
+                    {viewPackage?.map(item => (
+                      <div className=" fw-500 mt-8 p-8" style={{ backgroundColor: '#f8bc5a', color: 'white' }}>
+                        <div>
+                          {item.products.map(p => (
+                            <div className="d-flex justify-content-between p-8" style={{ borderBottom: '1px solid white' }}>
+                              <img src={p.image_link} alt="" width="50" />
+                              <div>{p.name}</div>
+                            </div>
+                          ))}
+                        </div>
+                        <div>Mã đơn: {item._id}</div>
+                        <div>trạng thái: {item.current_status_vi}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </>
           )) ||
             (statusChange === 'changePassword' && (
@@ -135,7 +161,7 @@ function Account(props) {
   );
 }
 
-const mapDispatchToProps = dispatch => ({ actions: bindActionCreators({ ...authActions }, dispatch) });
-const mapStateToProps = state => ({ ...selectAuth(state) });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators({ ...authActions, ...packageActions }, dispatch) });
+const mapStateToProps = state => ({ ...selectAuth(state), ...selectPackage(state) });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Account);

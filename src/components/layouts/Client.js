@@ -68,8 +68,8 @@ function Client({ children, ...props }) {
               <PhoneOutlined className="icon-header" style={{ marginRight: 8 }} />
               <a href="tel:0898709170">
                 <div className="d-flex flex-column">
-                  <div className="fw-500">Hotline</div>
-                  <div className="fw-700">0898709170</div>
+                  <div className="fw-500">Liên hệ</div>
+                  <div className="fw-700">0971979655</div>
                 </div>
               </a>
             </div>

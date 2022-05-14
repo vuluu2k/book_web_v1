@@ -56,8 +56,8 @@ function* startRequest(payload) {
 }
 
 function* loadList({ payload }) {
-  const { isAccess = ' ' } = payload;
-  const url = `${API_URL}/package/view_package?isAccess=${isAccess}`;
+  const { isAccess = '', userId } = payload;
+  const url = `${API_URL}/package/view_package?isAccess=${isAccess}&userId=${userId}`;
 
   try {
     const response = yield call(axios.get, url);
