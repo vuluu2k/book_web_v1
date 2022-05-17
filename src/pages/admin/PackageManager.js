@@ -14,21 +14,12 @@ const { Option } = Select;
 function PackageManager(props) {
   const {
     actions,
-    selectListPackage: { viewPackage, requesting, message, success },
+    selectListPackage: { viewPackage, requesting },
   } = props;
 
   useEffect(() => {
     actions.loadListPackage({ isAccess: ' ' });
   }, []);
-
-  useEffect(() => {
-    if (viewPackage?.length > 0) {
-      if (message === 'Tải dữ liệu đơn hàng thành công') return;
-      if (success && !requesting) return messageAntd.success(message || 'Cập nhật thành công');
-      else if (!success && !requesting) return messageAntd.error(message || 'Cập nhật thất bại');
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [requesting]);
 
   const columns = [
     {

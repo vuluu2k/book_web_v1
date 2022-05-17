@@ -117,8 +117,10 @@ function* createPackage({ payload }) {
     const response = yield call(axios.post, url, body);
 
     if (!response.data.success) {
+      messageAntd.error(response.data.message);
       yield put({ typ: CREATE_PACKAGE_ERROR, ...response.data });
     } else {
+      messageAntd.success(response.data.message);
       yield put({ type: CREATE_PACKAGE_SUCCESS, ...response.data });
     }
     return response.data;
@@ -159,8 +161,10 @@ function* deletePackage({ payload }) {
   try {
     const response = yield call(axios.delete, url);
     if (!response.data.success) {
+      messageAntd.error(response.data.message);
       yield put({ type: DELETE_PACKAGE_ERROR, ...response.data });
     } else {
+      messageAntd.success(response.data.message);
       yield put({ type: DELETE_PACKAGE_SUCCESS, ...response.data });
     }
     return response.data;
