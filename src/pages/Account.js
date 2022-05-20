@@ -30,7 +30,7 @@ function Account(props) {
     setState({ ...state, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => loadListPackage({ userId: user?._id }), []);
+  useEffect(() => loadListPackage({ userId: user?._id }), [user]);
 
   useEffect(() => {
     setState({
@@ -116,7 +116,7 @@ function Account(props) {
                   <h2 className="mt-16 text-center">Danh sách đơn hàng</h2>
                   <div>
                     {viewPackage?.map(item => (
-                      <div className=" fw-500 mt-8 p-8" style={{ backgroundColor: '#f8bc5a', color: 'white' }}>
+                      <div key={item._id} className=" fw-500 mt-8 p-8" style={{ backgroundColor: '#f8bc5a', color: 'white' }}>
                         <div>
                           {item.products.map(p => (
                             <div className="d-flex justify-content-between p-8" style={{ borderBottom: '1px solid white' }}>
