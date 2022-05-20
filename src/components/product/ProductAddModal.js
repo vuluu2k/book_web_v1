@@ -188,11 +188,11 @@ function ProductAddModal(props) {
   };
 
   const validate = () => {
-    if (!validator.isNumeric(value)) {
+    if (!validator.isNumeric(String(value))) {
       messageAntd.error('Nhập lại giá trị sản phẩm(kiểu số)');
       return false;
     }
-    if (!validator.isNumeric(quantity)) {
+    if (!validator.isNumeric(String(quantity))) {
       messageAntd.error('Nhập lại số lượng sản phẩm(kiểu số)');
       return false;
     }
@@ -200,7 +200,7 @@ function ProductAddModal(props) {
   };
 
   const onSubmitCreate = () => {
-    if (!validate()) {
+    if (validate()) {
       createProduct({
         name,
         value,

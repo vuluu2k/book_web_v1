@@ -366,7 +366,7 @@ function Pay(props) {
                           Hình thức thanh toán: <strong>{is_pay}</strong>
                         </div>
                         <div>
-                          Tổng tiền: <strong>{sumPay}</strong>
+                          Tổng tiền: <strong>{moneyMask(packageNew?.value)}</strong>
                         </div>
                         {is_pay === 'Thanh toán chuyển khoản' && (
                           <div className="p-8 border-radius-16 mt-8" style={{ backgroundColor: 'white', color: '#155724' }}>
